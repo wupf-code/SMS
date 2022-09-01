@@ -1,24 +1,57 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-
+import { createRouter, createWebHistory } from 'vue-router'
+import BulletinView from "@/views/ BulletinView/BulletinView";
+import StudentManagerView from "@/views/StrudentManager/StudentManagerView";
+import TeacherManagerView from "@/views/TeascherManager/TeacherManagerView";
+import UserAccountLoginView from "@/views/User/Account/UserAccountLoginView";
+import UserRegisterView from "@/views/User/Account/UserRegisterView";
+import ErrorView from "@/views/ErrorView/ErrorView";
+// import store from "@/store";
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: HomeView
+    path:"/",
+    name:"home",
+    redirect:"/studentmanager/",
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    path:"/studentmanager/",
+    name:"student_manager",
+    component :StudentManagerView
+  },
+  {
+    path:"/teachermanager/",
+    name:"teacher_manager",
+    component :TeacherManagerView
+  },
+  {
+    path:"/bulletin/",
+    name:"bulletin",
+    component :BulletinView
+  },
+  {
+    path:"/user/account/login/",
+    name:"login",
+    component :UserAccountLoginView
+  },
+
+  {
+    path:"/user/account/register/",
+    name:"register",
+    component :UserRegisterView,
+  },
+  {
+    path:"/404/",
+    name:"404",
+    component: ErrorView,
+  },
+  {
+    path:"/:catchAll(.*)",
+    redirect: "/404/",
+
   }
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes
 })
 
