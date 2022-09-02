@@ -19,10 +19,26 @@
             <router-link :class=" route_name=='bulletin' ? 'nav-link active' : 'nav-link' " :to="{ name : 'bulletin' }">公告</router-link>
 
           </li>
-
         </ul>
-        <ul class="navbar-nav ">
-        <li class="nav-item dropdown">
+        <ul class="navbar-nav" v-if="$store.state.user.is_login">
+          <li class="nav-item dropdown" >
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              {{$store.state.user.username}}
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li>
+                <router-link class="dropdown-item" :to="{name:'personalinformation'}"  role="button" >
+                  个人信息
+                </router-link>
+              </li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#" @click="logout">退出</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav" v-else-if="!$store.state.user.pulling_info">
+        <li class="nav-item dropdown" >
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             登录/注册
           </a>
@@ -37,11 +53,14 @@
                 注册
               </router-link>
             </li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">退出</a></li>
+<!--            <li><hr class="dropdown-divider"></li>-->
+<!--            <li><a class="dropdown-item" href="#">退出</a></li>-->
           </ul>
         </li>
         </ul>
+
+
+
 
       </div>
     </div>

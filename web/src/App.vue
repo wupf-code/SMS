@@ -12,8 +12,7 @@
     components: {
       NavBar,
     },
-     setup(){
-
+     setup() {
      }
   }
 </script>
