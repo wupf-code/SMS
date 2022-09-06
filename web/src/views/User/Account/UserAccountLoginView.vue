@@ -13,7 +13,7 @@
             <input v-model="password" type="password" class="form-control" id="password" placeholder="请输入密码">
           </div>
             <div class = "error-message">{{error_message}}</div>
-          <button type="submit" class="btn btn-primary">登录</button>
+          <button type="submit" class="btn btn-primary btn-group-justified">登录</button>
         </ContentFiled>
         </form>
 

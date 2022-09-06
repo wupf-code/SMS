@@ -2,9 +2,12 @@ package com.sms.backend.service.impl.user.account;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 
+import com.sms.backend.mapper.StudentMapper;
 import com.sms.backend.mapper.UserMapper;
+import com.sms.backend.pojo.Student;
 import com.sms.backend.pojo.User;
 import com.sms.backend.service.user.account.RegisterService;
+import com.sms.backend.service.user.account.UpdateStudentInformation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -23,6 +26,8 @@ import java.util.Map;
 public class RegisterServiceImpl implements RegisterService {
     @Autowired
     private UserMapper userMapper;
+    @Autowired
+    private StudentMapper studentMapper;
     @Autowired
     private PasswordEncoder passwordEncoder;
     @Override
@@ -70,9 +75,13 @@ public class RegisterServiceImpl implements RegisterService {
         }
 
         String encodedPassword = passwordEncoder.encode(password);
-        String photo = "https://s1.ax1x.com/2022/06/26/jAnVSJ.jpg";
         User user = new User(null,username, encodedPassword, identify);
         userMapper.insert(user);
+        Student student =new Student(null, username,"", "","",null,"","","");
+
+        if(identify.equals("student")){
+            studentMapper.insert(student);
+        }
         map.put("error_message","success");
         return map;
     }
