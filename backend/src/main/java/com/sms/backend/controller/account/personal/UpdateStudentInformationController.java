@@ -1,6 +1,6 @@
-package com.sms.backend.controller.account;
+package com.sms.backend.controller.account.personal;
 
-import com.sms.backend.service.user.account.UpdateStudentInformation;
+import com.sms.backend.service.user.account.personal.UpdateStudentInformation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;

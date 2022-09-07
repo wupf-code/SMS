@@ -1,9 +1,8 @@
-package com.sms.backend.controller.account;
+package com.sms.backend.controller.account.personal;
 
-import com.sms.backend.service.user.account.LoginService;
+import com.sms.backend.service.user.account.personal.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 

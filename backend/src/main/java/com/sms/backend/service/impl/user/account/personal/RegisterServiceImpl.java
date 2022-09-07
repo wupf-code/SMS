@@ -1,4 +1,4 @@
-package com.sms.backend.service.impl.user.account;
+package com.sms.backend.service.impl.user.account.personal;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 
@@ -6,8 +6,7 @@ import com.sms.backend.mapper.StudentMapper;
 import com.sms.backend.mapper.UserMapper;
 import com.sms.backend.pojo.Student;
 import com.sms.backend.pojo.User;
-import com.sms.backend.service.user.account.RegisterService;
-import com.sms.backend.service.user.account.UpdateStudentInformation;
+import com.sms.backend.service.user.account.personal.RegisterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

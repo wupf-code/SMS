@@ -1,11 +1,11 @@
-package com.sms.backend.service.impl.user.account;
+package com.sms.backend.service.impl.user.account.personal;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.sms.backend.mapper.StudentMapper;
 import com.sms.backend.pojo.Student;
 import com.sms.backend.pojo.User;
 import com.sms.backend.service.impl.utils.UserDetailsImpl;
-import com.sms.backend.service.user.account.GetStudentInfoService;
+import com.sms.backend.service.user.account.personal.GetStudentInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;

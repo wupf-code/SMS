@@ -1,11 +1,9 @@
-package com.sms.backend.service.impl.user.account;
+package com.sms.backend.service.impl.user.account.personal;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.sms.backend.mapper.UserMapper;
 import com.sms.backend.pojo.User;
 
 import com.sms.backend.service.impl.utils.UserDetailsImpl;
-import com.sms.backend.service.user.account.LoginService;
+import com.sms.backend.service.user.account.personal.LoginService;
 import com.sms.backend.utils.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;

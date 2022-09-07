@@ -31,6 +31,11 @@
                   个人信息
                 </router-link>
               </li>
+              <li>
+                <router-link class="dropdown-item" :to="{name:'familyinformation'}"  role="button" >
+                  家庭信息
+                </router-link>
+              </li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="#" @click="logout">退出</a></li>
             </ul>

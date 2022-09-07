@@ -1,4 +1,4 @@
-package com.sms.backend.service.user.account;
+package com.sms.backend.service.user.account.personal;
 
 import java.util.Map;
 

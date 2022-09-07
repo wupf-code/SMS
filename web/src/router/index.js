@@ -7,6 +7,7 @@ import UserRegisterView from "@/views/User/Account/UserRegisterView";
 import ErrorView from "@/views/ErrorView/ErrorView";
 import PersonalInformationView from "@/views/User/Account/PersonalInformationView";
 import store from "@/store";
+import FamilyInformationView from "@/views/User/Account/FamilyInformationView";
 // import store from "@/store";
 const routes = [
   {
@@ -67,6 +68,15 @@ const routes = [
       requestAuth:true
     }
   },
+  {
+    path:"/user/account/familyinformation/",
+    name:"familyinformation",
+    component:FamilyInformationView,
+    meta:{
+      requestAuth:true
+    }
+  },
+
   {
     path:"/404/",
     name:"404",
