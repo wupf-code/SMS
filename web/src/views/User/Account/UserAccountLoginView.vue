@@ -46,6 +46,14 @@ export default {
         success() {
           router.push({name:"home"})
           store.commit("updatePullingInfo",false);
+          store.dispatch("getStudentInfo",{
+            success(resp){
+              console.log(resp);
+            },
+            error(resp){
+              console.log(resp);
+            }
+          })
         },
         error(){
           store.commit("updatePullingInfo",false);

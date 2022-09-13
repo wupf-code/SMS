@@ -43,7 +43,10 @@ public class AddFamilyMemberImpl implements AddFamilyMember {
                 data.get("xueli"),
                 data.get("state"),
                 data.get("weixin"),
-                data.get("email")
+                data.get("email"),
+                "",
+                "",
+                ""
                 );
         familyMapper.insert(family);
         resp.put("error_message", "success");
