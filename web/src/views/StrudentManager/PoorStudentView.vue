@@ -87,7 +87,8 @@
         </tbody>
       </table>
       <div class="col-3" style="margin: 0 auto">
-        <button type="submit" class="btn btn-primary ">提交修改</button>
+        <div style="color: red">{{poor_students.shenhe}}</div>
+        <button v-if="poor_students.shenhe==='未提交'" type="submit" class="btn btn-primary ">提交修改</button>
       </div>
     </form>
   </ContentFiled>
@@ -98,12 +99,29 @@ import {useStore} from "vuex";
 import {reactive, ref} from "vue";
 import ContentFiled from "@/components/ContentField";
 import $ from "jquery";
+import router from "@/router";
 
 export default {
   name: "PoorStudentView",
   components: {ContentFiled},
   setup() {
     const store = useStore();
+    let poor_students = reactive({
+      username:"",
+      sex:"",
+      phone_number:"",
+      school:"",
+      department:"",
+      dadui:"",
+      speciality:"",
+      id_card:"",
+      minzu:"",
+      birthday:"",
+      political_outlook:"",
+      address:"",
+      family:null,
+      shenhe:"",
+    });
     let studentinfo = reactive(store.state.student.student);
     // let school = ref("东南大学成贤学院");
     // let department = ref("电子与计算机工程学院");
@@ -123,15 +141,64 @@ export default {
         member_list.value = resp;
       }
     });
-    let poor_students = reactive({
-      ...studentinfo,
-      family: member_list,
-      minzu:"汉族",
-      school :"东南大学成贤学院",
-      department:"电子与计算机工程学院",
-      dadui:"dadui",
-      speciality:"软件工程",
-    })
+      $.ajax({
+        url: "http://127.0.0.1:3000/studentmanager/poorstudent/getinfo/",
+        type: 'get',
+        headers: {
+          Authorization: "Bearer " + store.state.user.token,
+        },
+        success(resp) {
+          if(resp.error_message ==="success"){
+            poor_students.username=resp.username;
+            poor_students.sex=resp.sex;
+            poor_students.phone_number=resp.phone_number;
+            poor_students.school= resp.school;
+            poor_students.department  = resp.department;
+            poor_students.dadui= resp.dadui;
+            poor_students.speciality= resp.speciality;
+            poor_students.id_card= resp.id_card;
+            poor_students.minzu= resp.minzu;
+            poor_students.birthday= resp.birthday;
+            poor_students.political_outlook= resp.political_outlook;
+            poor_students.address= resp.address;
+            poor_students.family= member_list;
+            poor_students.shenhe= resp.shenhe;
+          }else{
+            poor_students.username=store.state.student.username;
+            poor_students.sex=store.state.student.sex;
+            poor_students.phone_number=store.state.student.phone_number;
+            poor_students.school="";
+            poor_students.department  ="";
+            poor_students.dadui= "";
+            poor_students.speciality= "";
+            poor_students.id_card= store.state.student.id_card;
+            poor_students.minzu= store.state.student.minzu;
+            poor_students.birthday= store.state.student.birthday;
+            poor_students.political_outlook= store.state.student.political_outlook;
+            poor_students.address=store.state.student.address;
+            poor_students.family= member_list;
+            poor_students.shenhe="未提交";
+          }
+
+        },
+        error(){
+            poor_students.username=store.state.student.username;
+            poor_students.sex=store.state.student.sex;
+            poor_students.phone_number=store.state.student.phone_number;
+            poor_students.school="";
+            poor_students.department  ="";
+            poor_students.dadui= "";
+            poor_students.speciality= "";
+            poor_students.id_card= store.state.student.id_card;
+            poor_students.minzu= store.state.student.minzu;
+            poor_students.birthday= store.state.student.birthday;
+            poor_students.political_outlook= store.state.student.political_outlook;
+            poor_students.address=store.state.student.address;
+            poor_students.family= member_list;
+            poor_students.shenhe="未提交";
+        }
+      })
+
     console.log(poor_students);
     const update_poor_student = () => {
       $.ajax({
@@ -146,6 +213,7 @@ export default {
         success(resp) {
           if (resp.error_message === "success") {
               console.log(resp);
+              router.push({name: "login"});
           } else {
             console.log(resp);
           }

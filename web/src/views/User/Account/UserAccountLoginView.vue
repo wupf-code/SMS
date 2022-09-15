@@ -44,16 +44,23 @@ export default {
       store.commit("updateToken",jwt_token);
       store.dispatch("getinfo",{
         success() {
-          router.push({name:"home"})
           store.commit("updatePullingInfo",false);
-          store.dispatch("getStudentInfo",{
-            success(resp){
-              console.log(resp);
-            },
-            error(resp){
-              console.log(resp);
-            }
-          })
+          if(store.state.user.identify === "student")
+          {
+            router.push({ name: 'home' });
+            store.dispatch("getStudentInfo",{
+              success(resp){
+                console.log(resp);
+              },
+              error(resp){
+                console.log(resp);
+              }
+            })
+          }
+
+          if(store.state.user.identify==="teacher")
+            router.push({name: 'teacher_manager'})
+
         },
         error(){
           store.commit("updatePullingInfo",false);
@@ -71,7 +78,10 @@ export default {
         success() {
           store.dispatch("getinfo", {
             success() {
-              router.push({ name: 'home' });
+              if(store.state.user.identify === "student")
+                router.push({ name: 'home' });
+              if(store.state.user.identify==="teacher")
+                router.push({name: 'teacher_manager'})
             }
           })
         },

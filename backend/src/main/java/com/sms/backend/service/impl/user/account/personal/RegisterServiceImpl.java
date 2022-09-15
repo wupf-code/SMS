@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -76,7 +77,7 @@ public class RegisterServiceImpl implements RegisterService {
         String encodedPassword = passwordEncoder.encode(password);
         User user = new User(null,username, encodedPassword, identify);
         userMapper.insert(user);
-        Student student =new Student(null, username,"", "","",null,"","","");
+        Student student =new Student(null, username,"", "","", new Date(),"","","");
 
         if(identify.equals("student")){
             studentMapper.insert(student);

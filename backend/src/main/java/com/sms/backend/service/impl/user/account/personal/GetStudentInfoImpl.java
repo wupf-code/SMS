@@ -37,16 +37,21 @@ public class GetStudentInfoImpl implements GetStudentInfoService {
         Student student = studentMapper.selectOne(queryWrapper);
         Map<String, String> map =new HashMap<>();
         SimpleDateFormat ft = new SimpleDateFormat ("yyyy-MM-dd");
-
-        map.put("error_message","success");
-        map.put("username",student.getUsername());
-        map.put("sex",student.getSex());
-        map.put("phone_number",student.getPhoneNumber());
-        map.put("id_card",student.getIdCard());
-        map.put("birthday", (ft.format(student.getBirthday())));
-        map.put("address",student.getAddress());
-        map.put("political_outlook", student.getPoliticalOutlook());
-        map.put("bedroom",student.getBedroom());
+        if(student!=null) {
+            System.out.println("1");
+            map.put("error_message", "success");
+            map.put("username", student.getUsername());
+            map.put("sex", student.getSex());
+            map.put("phone_number", student.getPhoneNumber());
+            map.put("id_card", student.getIdCard());
+            map.put("birthday", (ft.format(student.getBirthday())));
+            map.put("address", student.getAddress());
+            map.put("political_outlook", student.getPoliticalOutlook());
+            map.put("bedroom", student.getBedroom());
+        }else {
+            System.out.println("2");
+            map.put("error_message","暂无信息");
+        }
         return map;
     }
 }

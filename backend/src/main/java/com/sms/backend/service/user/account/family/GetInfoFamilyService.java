@@ -13,4 +13,5 @@ import java.util.Map;
  */
 public interface GetInfoFamilyService {
     List<Family> getInfoFamily();
+    List<Family> getInfoFamily(Map<String, String>data);
 }

@@ -7,11 +7,11 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
+          <li class="nav-item" v-if="$store.state.user.identify === 'student' ">
             <router-link :class=" route_name=='student_manager' ? 'nav-link active' : 'nav-link' " :to="{ name : 'student_manager' }">学生工作管理</router-link>
 
           </li>
-          <li class="nav-item">
+          <li class="nav-item" v-if="$store.state.user.identify === 'teacher' ">
             <router-link :class=" route_name=='manager_manager' ? 'nav-link active' : 'nav-link' " :to="{ name : 'teacher_manager' }">教师工作管理</router-link>
 
           </li>
@@ -26,12 +26,12 @@
               {{$store.state.user.username}}
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li>
+              <li v-if="$store.state.user.identify === 'student'">
                 <router-link class="dropdown-item" :to="{name:'personalinformation'}"  role="button" >
                   个人信息
                 </router-link>
               </li>
-              <li>
+              <li v-if="$store.state.user.identify === 'student'">
                 <router-link class="dropdown-item" :to="{name:'familyinformation'}"  role="button" >
                   家庭信息
                 </router-link>

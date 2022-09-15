@@ -34,4 +34,15 @@ public class GetInfoFamilyImpl implements GetInfoFamilyService {
         queryWrapper.eq("student_id",user.getId());
         return  familyMapper.selectList(queryWrapper);
     }
+
+    @Override
+    public List<Family> getInfoFamily(Map<String, String> data) {
+        UsernamePasswordAuthenticationToken authenticationToken =
+                (UsernamePasswordAuthenticationToken) SecurityContextHolder.getContext().getAuthentication();
+        UserDetailsImpl loginUser = (UserDetailsImpl) authenticationToken.getPrincipal();
+        User user = loginUser.getUser();
+        QueryWrapper<Family> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("student_id",(data.get("student_id")));
+        return  familyMapper.selectList(queryWrapper);
+    }
 }
