@@ -34,4 +34,5 @@ public class PoorStudent {
     private String state;
     private String address;
     private String shenhe;
+    private String code;
 }

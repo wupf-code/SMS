@@ -55,7 +55,8 @@ public class AddPoorStudentImpl implements AddPoorStudentService {
                 ft.parse(data.get("birthday")),
                 data.get("political_outlook"),
                 data.get("address"),
-                "待审核"
+                "待审核",
+                ""
         );
         poorStudentMapper.insert(poorStudent);
         Family family = familyMapper.selectById(user.getId());

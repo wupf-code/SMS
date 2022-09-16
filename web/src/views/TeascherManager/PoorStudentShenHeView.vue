@@ -90,7 +90,7 @@
                 </div>
                 <div class="modal-footer">
 <!--                  <div class="error_message">{{bot.error_message}}</div>-->
-                  <button type="button" class="btn btn-primary" @click="bot_update(bot)">通过审核</button>
+                  <button type="button" class="btn btn-primary"  v-if="bot.shenhe === '待审核'" @click="bot_update(bot)">{{shenhe}}</button>
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
                 </div>
               </div>
@@ -106,6 +106,8 @@
 
 <script>
 import ContentField from "@/components/ContentField";
+import {Modal} from 'bootstrap/dist/js/bootstrap';
+
 import {ref} from "vue";
 import $ from 'jquery'
 import {useStore} from "vuex";
@@ -113,6 +115,7 @@ export default {
   name: "PoorStudentShenHeView",
   components:{ContentField},
   setup(){
+    let shenhe = ref("通过");
     const store = useStore();
     let poor_students = ref("");
     const refresh  = () => {
@@ -149,10 +152,31 @@ export default {
         }
       });
     }
+    const bot_update = (bot) =>{
+      $.ajax({
+        url: "http://127.0.0.1:3000/studentmanager/poorstudent/update/code/",
+        type: 'post',
+        headers: {
+          Authorization: "Bearer " + store.state.user.token,
+        },
+        data:{
+          student_id:bot.studentId,
+        },
+        success(resp) {
+          console.log(resp);
+          if(resp.error_message ==="success"){
+            Modal.getInstance("#update-bot-button-"+bot.id).hide();
+            refresh();
+          }
+        }
+      });
+    }
     return {
       poor_students,
       member_list,
       getFamily,
+      shenhe,
+      bot_update,
     }
   }
 }
