@@ -47,6 +47,7 @@ public class UpdatePoorStudentCodeImpl implements UpdatePoorStudentCodeService {
         Map<String,String> resp = new HashMap<>();
         PoorStudent poorStudent = poorStudentMapper.selectOne(queryWrapper);
         poorStudent.setShenhe("已通过");
+        poorStudent.setLevel(Integer.valueOf(data.get("level")));
         String code = getRandomString(20);
         poorStudent.setCode(code);
         updateWrapper.eq("student_id",data.get("student_id"));

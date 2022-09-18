@@ -56,7 +56,8 @@ public class AddPoorStudentImpl implements AddPoorStudentService {
                 data.get("political_outlook"),
                 data.get("address"),
                 "待审核",
-                ""
+                "",
+                0
         );
         poorStudentMapper.insert(poorStudent);
         Family family = familyMapper.selectById(user.getId());

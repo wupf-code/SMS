@@ -35,4 +35,5 @@ public class PoorStudent {
     private String address;
     private String shenhe;
     private String code;
+    public  Integer level;
 }

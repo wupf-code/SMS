@@ -87,6 +87,10 @@
                     </tr>
                     </tbody>
                   </table>
+                  <div><label for="inputIdCard" class="form-label">困难生等级</label>
+                    <input v-model="bot.level" type="text" class="form-control" id="inputIdCard"
+                           placeholder="0"></div>
+
                 </div>
                 <div class="modal-footer">
 <!--                  <div class="error_message">{{bot.error_message}}</div>-->
@@ -161,6 +165,7 @@ export default {
         },
         data:{
           student_id:bot.studentId,
+          level:bot.level,
         },
         success(resp) {
           console.log(resp);

@@ -52,6 +52,7 @@ public class PoorStudentGetInfoImpl implements PoorStudentGetInfoService {
             map.put("political_outlook", poorStudent.getState());
             map.put("address", poorStudent.getAddress());
             map.put("shenhe", poorStudent.getShenhe());
+            map.put("level", poorStudent.getLevel().toString());
         }else {
             map.put("error_message","暂无信息");
         }

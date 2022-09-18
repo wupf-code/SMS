@@ -213,7 +213,7 @@ export default {
         success(resp) {
           if (resp.error_message === "success") {
               console.log(resp);
-              router.push({name: "login"});
+              router.push({name: "student_manager"});
           } else {
             console.log(resp);
           }

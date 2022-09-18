@@ -1,4 +1,4 @@
-package com.sms.backend.controller.studentmanager;
+package com.sms.backend.controller.studentmanager.poorstudent;
 
 import com.sms.backend.service.poorstudent.UpdatePoorStudentCodeService;
 import org.springframework.beans.factory.annotation.Autowired;
