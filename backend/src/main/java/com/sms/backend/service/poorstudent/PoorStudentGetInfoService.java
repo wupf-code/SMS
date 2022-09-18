@@ -10,4 +10,6 @@ import java.util.Map;
  */
 public interface PoorStudentGetInfoService {
     Map<String, String> poorStudentGetInfo();
+    Map<String ,String> poorStudentGetById(Map<String, String >data);
+
 }

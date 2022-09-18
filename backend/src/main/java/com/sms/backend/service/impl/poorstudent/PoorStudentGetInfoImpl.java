@@ -58,4 +58,34 @@ public class PoorStudentGetInfoImpl implements PoorStudentGetInfoService {
         }
         return map;
     }
+
+    @Override
+    public Map<String, String> poorStudentGetById(Map<String ,String>data) {
+        QueryWrapper<PoorStudent> queryWrapper =new QueryWrapper<>();
+        queryWrapper.eq("student_id",data.get("student_id"));
+        PoorStudent poorStudent = poorStudentMapper.selectOne(queryWrapper);
+        Map<String, String> map =new HashMap<>();
+        SimpleDateFormat ft = new SimpleDateFormat ("yyyy-MM-dd");
+        if(poorStudent!=null) {
+            map.put("error_message", "success");
+            map.put("username", poorStudent.getUsername());
+            map.put("sex", poorStudent.getSex());
+            map.put("phone_number", poorStudent.getPhoneNumber());
+            map.put("school", poorStudent.getSchool());
+            map.put("department", poorStudent.getDepartment());
+            map.put("dadui", poorStudent.getDadui());
+            map.put("speciality", poorStudent.getZhuanye());
+            map.put("id_card", poorStudent.getIdNumber());
+            map.put("minzu", poorStudent.getMinzu());
+            map.put("birthday", ft.format(poorStudent.getBirthday()));
+            map.put("political_outlook", poorStudent.getState());
+            map.put("address", poorStudent.getAddress());
+            map.put("shenhe", poorStudent.getShenhe());
+            map.put("level", poorStudent.getLevel().toString());
+        }else {
+            map.put("error_message","暂无信息");
+        }
+        return map;
+    }
+
 }
