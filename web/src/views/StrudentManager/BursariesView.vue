@@ -134,7 +134,17 @@ export default {
       shenhe:"",
       level : "",
     });
-
+    $.ajax({
+      url:"http://127.0.0.1:3000/studentmanager/kunnanstudent/getinfo/",
+      type:"get",
+      headers: {
+        Authorization: "Bearer " + store.state.user.token,
+      },
+      success(resp){
+        state.value = resp.state;
+        reason.value = resp.reason;
+      }
+    })
     $.ajax({
       url: "http://127.0.0.1:3000/user/account/family/getinfo/",
       type: 'get',
@@ -145,17 +155,6 @@ export default {
         member_list.value = resp;
       }
     });
-    $.ajax({
-      uri:"http://127.0.0.1:3000/studentmanager/kunnanstudent/getinfo/",
-      type:"get",
-      header:{
-        Authorization: "Bearer " + store.state.user.token,
-      },
-      success(resp){
-        state.value = resp.state;
-        reason = resp.reason;
-      }
-    })
     $.ajax({
       url: "http://127.0.0.1:3000/studentmanager/poorstudent/getinfo/",
       type: 'get',

@@ -48,6 +48,7 @@ public class KunnanStudentImpl implements KunnanStudentServie {
         if(kunnanStudent != null){
             resp.put("errror_message", "success");
             resp.put("reason", kunnanStudent.getReason());
+            resp.put("state", kunnanStudent.getState());
         }else {
             resp.put("error_message","success");
         }
