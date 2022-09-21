@@ -11,6 +11,8 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
+import javax.sound.midi.Soundbank;
+import java.sql.SQLOutput;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Map;
@@ -50,6 +52,30 @@ public class GetStudentInfoImpl implements GetStudentInfoService {
             map.put("bedroom", student.getBedroom());
         }else {
             System.out.println("2");
+            map.put("error_message","暂无信息");
+        }
+        return map;
+    }
+
+    @Override
+    public Map<String, String> getStudentInfoById(Map<String, String>data) {
+        QueryWrapper<Student>queryWrapper =new QueryWrapper<>();
+        System.out.println(data);
+        queryWrapper.eq("username",data.get("student_id"));
+        Student student = studentMapper.selectOne(queryWrapper);
+        Map<String, String> map =new HashMap<>();
+        SimpleDateFormat ft = new SimpleDateFormat ("yyyy-MM-dd");
+        if(student!=null) {
+            map.put("error_message", "success");
+            map.put("username", student.getUsername());
+            map.put("sex", student.getSex());
+            map.put("phone_number", student.getPhoneNumber());
+            map.put("id_card", student.getIdCard());
+            map.put("birthday", (ft.format(student.getBirthday())));
+            map.put("address", student.getAddress());
+            map.put("political_outlook", student.getPoliticalOutlook());
+            map.put("bedroom", student.getBedroom());
+        }else {
             map.put("error_message","暂无信息");
         }
         return map;

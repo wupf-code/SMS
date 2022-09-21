@@ -10,4 +10,5 @@ import java.util.Map;
  */
 public interface GetStudentInfoService {
     Map<String,String> getStudentInfo();
+    Map<String,String> getStudentInfoById(Map<String, String>data);
 }

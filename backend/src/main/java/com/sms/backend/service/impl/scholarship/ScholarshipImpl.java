@@ -1,6 +1,7 @@
 package com.sms.backend.service.impl.scholarship;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.sms.backend.mapper.ScholarshipMapper;
 import com.sms.backend.pojo.KunnanStudent;
 import com.sms.backend.pojo.Scholarship;
@@ -56,12 +57,22 @@ public class ScholarshipImpl implements ScholarshipService {
     }
 
     @Override
-    public List<KunnanStudent> scholarshipGetAll() {
-        return null;
+    public List<Scholarship> scholarshipGetAll() {
+        return scholarshipMapper.selectList(null);
     }
 
     @Override
     public Map<String, String> scholarshipUpdate(Map<String, String> data) {
-        return null;
+        UpdateWrapper<Scholarship> updateWrapper = new UpdateWrapper<>();
+        QueryWrapper<Scholarship> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("student_id",(data.get("student_id")));
+        Map<String,String> resp = new HashMap<>();
+        Scholarship scholarship = scholarshipMapper.selectOne(queryWrapper);
+        scholarship.setState("已通过");
+        scholarship.setComments(data.get("comments"));
+        updateWrapper.eq("student_id",data.get("student_id"));
+        scholarshipMapper.update(scholarship,updateWrapper);
+        resp.put("error_message", "success");
+        return resp;
     }
 }

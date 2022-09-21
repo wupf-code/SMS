@@ -12,6 +12,9 @@
                 <a @click="update_active_id(2)"  href="#" :class="$store.state.student.active_id === 2 ? 'list-group-item list-group-item-action active' : 'list-group-item list-group-item-action'">
                   助学金审核
                 </a>
+                <a @click="update_active_id(3)"  href="#" :class="$store.state.student.active_id === 3 ? 'list-group-item list-group-item-action active' : 'list-group-item list-group-item-action'">
+                  奖学金审核
+                </a>
               </div>
             </div>
           </div>
@@ -20,6 +23,7 @@
       <div class="col-8">
         <PoorStudentShenHeView v-if="$store.state.teacher.active_id === 1 " />
         <BursariesShenHeView v-if="$store.state.teacher.active_id === 2 " />
+        <ScholarshipManagerView v-if="$store.state.teacher.active_id  === 3"/>
       </div>
     </div>
 </template>
@@ -28,9 +32,11 @@
 import {useStore} from "vuex";
 import PoorStudentShenHeView from "@/views/TeascherManager/PoorStudentShenHeView";
 import BursariesShenHeView from "@/views/TeascherManager/BursariesShenHeView";
+import ScholarshipManagerView from "@/views/TeascherManager/ScholarshipManagerView";
 export default {
   name: "TeacherManagerView",
   components:{
+    ScholarshipManagerView,
     BursariesShenHeView,
     PoorStudentShenHeView
 

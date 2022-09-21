@@ -3,6 +3,7 @@ package com.sms.backend.controller.account.personal;
 import com.sms.backend.service.user.account.personal.GetStudentInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
@@ -20,5 +21,10 @@ public class GetStudentInfoController {
     @GetMapping("/user/account/studentinfo/")
     public Map<String,String> getStudentInfo(){
         return getStudentInfoService.getStudentInfo();
+    }
+
+    @GetMapping("/studentmanager/student/getinfobyid/")
+    public Map<String, String> getInfoById(@RequestParam Map<String ,String >data){
+        return getStudentInfoService.getStudentInfoById(data);
     }
 }

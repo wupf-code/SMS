@@ -1,6 +1,7 @@
 package com.sms.backend.controller.studentmanager.scholarship;
 
 import com.sms.backend.pojo.KunnanStudent;
+import com.sms.backend.pojo.Scholarship;
 import com.sms.backend.service.kunnanstudent.KunnanStudentServie;
 import com.sms.backend.service.scholaship.ScholarshipService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,7 @@ public class ScholarshipController {
     }
 
     @GetMapping("/studentmanager/scholarship/getall/")
-    public List<KunnanStudent> getAll(){
+    public List<Scholarship> getAll(){
         return scholarshipService.scholarshipGetAll();
     }
     @PostMapping("/studentmanager/scholarship/updateComment/")

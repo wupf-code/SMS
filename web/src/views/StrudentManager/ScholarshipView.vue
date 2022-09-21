@@ -124,7 +124,6 @@ export default {
         Authorization: "Bearer " + store.state.user.token,
       },
       success(resp){
-        console.log(222222);
         state.value = resp.state;
         reason.value = resp.reason;
       }
