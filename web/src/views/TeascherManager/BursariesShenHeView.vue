@@ -12,7 +12,7 @@
       <tr v-for="kunnan_student in kunnan_students" :key="kunnan_student.id">
         <td>{{kunnan_student.username}}</td>
         <td>{{kunnan_student.state}}</td>
-        <td><button type="button" @click="getInfoById(kunnan_student)" class="btn btn-primary" data-bs-toggle="modal" :data-bs-target="'#update-bot-button-'+kunnan_student.id">审核</button>
+        <td><button type="button"  @click="getInfoById(kunnan_student)" class="btn btn-primary" data-bs-toggle="modal" :data-bs-target="'#update-bot-button-'+kunnan_student.id">审核</button>
           <div class="modal fade" :id="'update-bot-button-'+kunnan_student.id" tabindex="-1" >
             <div class="modal-dialog modal-fullscreen">
               <div class="modal-content">

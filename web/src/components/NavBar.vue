@@ -36,6 +36,11 @@
                   家庭信息
                 </router-link>
               </li>
+              <li v-if="$store.state.user.identify === 'teacher'">
+                <router-link class="dropdown-item" :to="{name:'add_notice'}"  role="button" >
+                  发布公告
+                </router-link>
+              </li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="#" @click="logout">退出</a></li>
             </ul>

@@ -8,6 +8,7 @@ import ErrorView from "@/views/ErrorView/ErrorView";
 import PersonalInformationView from "@/views/User/Account/PersonalInformationView";
 import store from "@/store";
 import FamilyInformationView from "@/views/User/Account/FamilyInformationView";
+import AddNoticeView from "@/views/ BulletinView/AddNoticeView";
 // import store from "@/store";
 const routes = [
   {
@@ -72,6 +73,14 @@ const routes = [
     path:"/user/account/familyinformation/",
     name:"familyinformation",
     component:FamilyInformationView,
+    meta:{
+      requestAuth:true
+    }
+  },
+  {
+    path:"/user/notice/add_notice/",
+    name:"add_notice",
+    component:AddNoticeView,
     meta:{
       requestAuth:true
     }
