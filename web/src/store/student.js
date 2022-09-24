@@ -27,7 +27,7 @@ export default {
                 state.political_outlook=student.political_outlook;
                 state.address=student.address;
         },
-        updateActiveId(state, id){
+        updateStudentActiveId(state, id){
             state.active_id = id;
         },
 

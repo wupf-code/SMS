@@ -52,7 +52,7 @@ export default {
   setup(){
     const store = useStore();
     const update_active_id = (e) =>{
-      store.commit("updateActiveId",e);
+      store.commit("updateStudentActiveId",e);
       console.log(e);
     }
 

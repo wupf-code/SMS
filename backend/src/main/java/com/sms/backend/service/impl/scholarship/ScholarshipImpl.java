@@ -51,7 +51,7 @@ public class ScholarshipImpl implements ScholarshipService {
             resp.put("reason", scholarship.getReason());
             resp.put("state", scholarship.getState());
         }else {
-            resp.put("error_message","success");
+            resp.put("error_message","null");
         }
         return resp;
     }

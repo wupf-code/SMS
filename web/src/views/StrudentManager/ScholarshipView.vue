@@ -124,8 +124,10 @@ export default {
         Authorization: "Bearer " + store.state.user.token,
       },
       success(resp){
-        state.value = resp.state;
-        reason.value = resp.reason;
+        if(resp.error_message === "success"){
+          state.value = resp.state;
+          reason.value = resp.reason;
+        }
       }
     })
     $.ajax({
