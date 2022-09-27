@@ -1,6 +1,6 @@
 package com.sms.backend.service.notice;
 
-import com.sms.backend.pojo.Notice;
+import com.sms.backend.entity.Notice;
 
 import java.util.List;
 import java.util.Map;

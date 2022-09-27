@@ -1,6 +1,6 @@
 package com.sms.backend.service.impl.user.account.personal;
 
-import com.sms.backend.pojo.User;
+import com.sms.backend.entity.User;
 
 import com.sms.backend.service.impl.utils.UserDetailsImpl;
 import com.sms.backend.service.user.account.personal.LoginService;

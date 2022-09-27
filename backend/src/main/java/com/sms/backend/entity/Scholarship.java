@@ -1,4 +1,4 @@
-package com.sms.backend.pojo;
+package com.sms.backend.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -9,11 +9,12 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Notice {
+public class Scholarship {
     @TableId(type = IdType.AUTO)
     private Integer id;
-    private Integer userId;
+    private Integer studentId;
     private String username;
-    private String title;
-    private String content;
+    private String reason;
+    private String comments;
+    private String state;
 }

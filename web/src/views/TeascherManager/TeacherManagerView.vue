@@ -18,6 +18,9 @@
                 <a @click="update_active_id(4)"  href="#" :class="$store.state.teacher.active_id === 4 ? 'list-group-item list-group-item-action active' : 'list-group-item list-group-item-action'">
                   日志填写
                 </a>
+                <a @click="update_active_id(5)"  href="#" :class="$store.state.teacher.active_id === 5 ? 'list-group-item list-group-item-action active' : 'list-group-item list-group-item-action'">
+                  勤工俭学
+                </a>
               </div>
             </div>
           </div>
@@ -28,6 +31,7 @@
         <BursariesShenHeView v-if="$store.state.teacher.active_id === 2 " />
         <ScholarshipManagerView v-if="$store.state.teacher.active_id  === 3"/>
         <TeacherLog v-if="$store.state.teacher.active_id === 4"/>
+        <GangWeiView v-if="store.state.teacher.active_id === 5"></GangWeiView>
       </div>
     </div>
 </template>
@@ -38,9 +42,11 @@ import PoorStudentShenHeView from "@/views/TeascherManager/PoorStudentShenHeView
 import BursariesShenHeView from "@/views/TeascherManager/BursariesShenHeView";
 import ScholarshipManagerView from "@/views/TeascherManager/ScholarshipManagerView";
 import TeacherLog from "@/views/TeascherManager/TeacherLog";
+import GangWeiView from "@/views/TeascherManager/GangWeiView";
 export default {
   name: "TeacherManagerView",
   components:{
+    GangWeiView,
     TeacherLog,
     ScholarshipManagerView,
     BursariesShenHeView,

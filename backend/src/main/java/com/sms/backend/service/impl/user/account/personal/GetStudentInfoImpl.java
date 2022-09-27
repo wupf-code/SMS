@@ -2,8 +2,8 @@ package com.sms.backend.service.impl.user.account.personal;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.sms.backend.mapper.StudentMapper;
-import com.sms.backend.pojo.Student;
-import com.sms.backend.pojo.User;
+import com.sms.backend.entity.Student;
+import com.sms.backend.entity.User;
 import com.sms.backend.service.impl.utils.UserDetailsImpl;
 import com.sms.backend.service.user.account.personal.GetStudentInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +11,6 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
-import javax.sound.midi.Soundbank;
-import java.sql.SQLOutput;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Map;

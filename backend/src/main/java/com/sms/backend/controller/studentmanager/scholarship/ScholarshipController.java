@@ -1,8 +1,6 @@
 package com.sms.backend.controller.studentmanager.scholarship;
 
-import com.sms.backend.pojo.KunnanStudent;
-import com.sms.backend.pojo.Scholarship;
-import com.sms.backend.service.kunnanstudent.KunnanStudentServie;
+import com.sms.backend.entity.Scholarship;
 import com.sms.backend.service.scholaship.ScholarshipService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

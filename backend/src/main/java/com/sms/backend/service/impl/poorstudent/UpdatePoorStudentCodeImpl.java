@@ -3,14 +3,11 @@ package com.sms.backend.service.impl.poorstudent;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.sms.backend.mapper.PoorStudentMapper;
-import com.sms.backend.pojo.PoorStudent;
-import com.sms.backend.pojo.Student;
+import com.sms.backend.entity.PoorStudent;
 import com.sms.backend.service.poorstudent.UpdatePoorStudentCodeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.xml.ws.Action;
-import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;

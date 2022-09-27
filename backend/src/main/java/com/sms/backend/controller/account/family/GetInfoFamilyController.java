@@ -1,7 +1,6 @@
 package com.sms.backend.controller.account.family;
 
-import com.sms.backend.pojo.Family;
-import com.sms.backend.pojo.Student;
+import com.sms.backend.entity.Family;
 import com.sms.backend.service.user.account.family.GetInfoFamilyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

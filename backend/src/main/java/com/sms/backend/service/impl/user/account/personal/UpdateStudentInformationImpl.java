@@ -2,7 +2,7 @@ package com.sms.backend.service.impl.user.account.personal;
 
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.sms.backend.mapper.StudentMapper;
-import com.sms.backend.pojo.Student;
+import com.sms.backend.entity.Student;
 import com.sms.backend.service.user.account.personal.UpdateStudentInformation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

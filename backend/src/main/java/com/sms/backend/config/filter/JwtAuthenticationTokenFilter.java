@@ -8,7 +8,7 @@ package com.sms.backend.config.filter;
  */
 
 import com.sms.backend.mapper.UserMapper;
-import com.sms.backend.pojo.User;
+import com.sms.backend.entity.User;
 import com.sms.backend.service.impl.utils.UserDetailsImpl;
 import com.sms.backend.utils.JwtUtil;
 import io.jsonwebtoken.Claims;

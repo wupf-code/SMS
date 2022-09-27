@@ -1,7 +1,6 @@
 package com.sms.backend.service.kunnanstudent;
 
-import com.sms.backend.pojo.KunnanStudent;
-import com.sms.backend.pojo.PoorStudent;
+import com.sms.backend.entity.KunnanStudent;
 
 import java.util.List;
 import java.util.Map;

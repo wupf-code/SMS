@@ -1,4 +1,4 @@
-package com.sms.backend.pojo;
+package com.sms.backend.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -6,34 +6,29 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
-
 /**
  * @author: 武鹏飞
  * @user:ASUS
- * @date:2022/9/13 - 21:01
+ * @date:2022/9/7 - 15:29
  * @projectName:backend
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class PoorStudent {
+public class Family {
     @TableId(type = IdType.AUTO)
     private Integer id;
     private Integer studentId;
     private String username;
+    private Integer age;
     private String sex;
-    private String phoneNumber;
-    private String school;
-    private String department;
-    private String dadui;
-    private String zhuanye;
-    private String idNumber;
-    private String minzu;
-    private Date birthday;
+    private String relation;
+    private String occupation;
+    private String xueli;
     private String state;
-    private String address;
-    private String shenhe;
-    private String code;
-    public  Integer level;
+    private String weixin;
+    private String email;
+    private String danwei;
+    private String salary;
+    private String health;
 }

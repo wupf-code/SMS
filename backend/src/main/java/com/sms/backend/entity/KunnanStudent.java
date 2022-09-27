@@ -1,25 +1,20 @@
-package com.sms.backend.pojo;
+package com.sms.backend.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.boot.autoconfigure.batch.BatchDataSource;
 
-/**
- * @author: 武鹏飞
- * @user:ASUS
- * @date:2022/9/2 - 14:22
- * @projectName:backend
- */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class KunnanStudent {
     @TableId(type = IdType.AUTO)
     private Integer id;
+    private Integer studentId;
     private String username;
-    private String password;
-    private String identify;
+    private String reason;
+    private String comments;
+    private String state;
 }

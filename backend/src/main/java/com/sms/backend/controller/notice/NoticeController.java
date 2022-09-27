@@ -1,6 +1,6 @@
 package com.sms.backend.controller.notice;
 
-import com.sms.backend.pojo.Notice;
+import com.sms.backend.entity.Notice;
 import com.sms.backend.service.notice.NoticeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

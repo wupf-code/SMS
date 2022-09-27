@@ -1,11 +1,10 @@
 package com.sms.backend.service.impl.user.account.family;
 
 import com.sms.backend.mapper.FamilyMapper;
-import com.sms.backend.pojo.Family;
-import com.sms.backend.pojo.User;
+import com.sms.backend.entity.Family;
+import com.sms.backend.entity.User;
 import com.sms.backend.service.impl.utils.UserDetailsImpl;
 import com.sms.backend.service.user.account.family.AddFamilyMember;
-import org.apache.ibatis.annotations.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;

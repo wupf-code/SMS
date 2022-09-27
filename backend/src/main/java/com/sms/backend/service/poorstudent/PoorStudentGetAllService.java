@@ -1,9 +1,8 @@
 package com.sms.backend.service.poorstudent;
 
-import com.sms.backend.pojo.PoorStudent;
+import com.sms.backend.entity.PoorStudent;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author: 武鹏飞

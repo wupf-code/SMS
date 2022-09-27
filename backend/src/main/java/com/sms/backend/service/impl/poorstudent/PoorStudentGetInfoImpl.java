@@ -2,9 +2,8 @@ package com.sms.backend.service.impl.poorstudent;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.sms.backend.mapper.PoorStudentMapper;
-import com.sms.backend.pojo.PoorStudent;
-import com.sms.backend.pojo.Student;
-import com.sms.backend.pojo.User;
+import com.sms.backend.entity.PoorStudent;
+import com.sms.backend.entity.User;
 import com.sms.backend.service.impl.utils.UserDetailsImpl;
 import com.sms.backend.service.poorstudent.PoorStudentGetInfoService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,7 +1,7 @@
 package com.sms.backend.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.sms.backend.pojo.PoorStudent;
+import com.sms.backend.entity.PoorStudent;
 import org.apache.ibatis.annotations.Mapper;
 
 /**

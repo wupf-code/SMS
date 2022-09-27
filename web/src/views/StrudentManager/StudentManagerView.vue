@@ -15,6 +15,9 @@
               <a @click="update_active_id(3)"  href="#" :class="$store.state.student.active_id === 3 ? 'list-group-item list-group-item-action active' : 'list-group-item list-group-item-action'">
                 奖学金申请
               </a>
+              <a @click="update_active_id(4)"  href="#" :class="$store.state.student.active_id === 4 ? 'list-group-item list-group-item-action active' : 'list-group-item list-group-item-action'">
+                勤工俭学
+              </a>
             </div>
           </div>
         </div>
@@ -31,6 +34,7 @@
       <PoorStudentView v-if="$store.state.student.active_id === 1 " />
       <BursariesView v-if="$store.state.student.active_id === 2 " />
       <ScholarshipView v-if="$store.state.student.active_id === 3 " />
+      <QinGongView v-if="$store.state.student.active_id === 4"/>
     </div>
   </div>
 </template>
@@ -40,10 +44,12 @@ import {useStore} from "vuex";
 import PoorStudentView from "@/views/StrudentManager/PoorStudentView";
 import BursariesView from "@/views/StrudentManager/BursariesView";
 import ScholarshipView from "@/views/StrudentManager/ScholarshipView";
+import QinGongView from "@/views/StrudentManager/QinGongView";
 // import ContentField from "@/components/ContentField";
 export default {
   name: "StudentManagerView",
   components: {
+    QinGongView,
     ScholarshipView,
     // ContentField,
     PoorStudentView,

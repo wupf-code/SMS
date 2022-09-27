@@ -1,9 +1,8 @@
 package com.sms.backend.service.impl.notice;
 
-import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.sms.backend.mapper.NoticeMapper;
-import com.sms.backend.pojo.Notice;
-import com.sms.backend.pojo.User;
+import com.sms.backend.entity.Notice;
+import com.sms.backend.entity.User;
 import com.sms.backend.service.impl.utils.UserDetailsImpl;
 import com.sms.backend.service.notice.NoticeService;
 import org.springframework.beans.factory.annotation.Autowired;

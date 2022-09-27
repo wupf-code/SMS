@@ -1,6 +1,6 @@
 package com.sms.backend.controller.studentmanager.poorstudent;
 
-import com.sms.backend.pojo.PoorStudent;
+import com.sms.backend.entity.PoorStudent;
 import com.sms.backend.service.poorstudent.PoorStudentGetAllService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

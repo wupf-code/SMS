@@ -1,6 +1,6 @@
 package com.sms.backend.service.user.account.family;
 
-import com.sms.backend.pojo.Family;
+import com.sms.backend.entity.Family;
 
 import java.util.List;
 import java.util.Map;

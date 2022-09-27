@@ -1,7 +1,7 @@
 package com.sms.backend.service.impl.utils;
 
 
-import com.sms.backend.pojo.User;
+import com.sms.backend.entity.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
