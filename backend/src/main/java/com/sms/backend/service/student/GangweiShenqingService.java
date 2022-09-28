@@ -9,4 +9,8 @@ import java.util.Map;
 public interface GangweiShenqingService {
     Map<String, String> add(Map<String,String>data);
     JSONObject getAll();
+
+    List<JSONObject> getInfo();
+
+    Map<String ,String> updateState( Map<String ,String>data);
 }

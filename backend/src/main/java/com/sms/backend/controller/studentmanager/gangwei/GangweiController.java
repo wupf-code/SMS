@@ -25,4 +25,12 @@ public class GangweiController {
     public JSONObject getAll(){
         return gangweiShenqingService.getAll();
     }
+    @GetMapping("/studentmanager/gangwei/getinfoall/")
+    public List<JSONObject> getinfo(){
+        return gangweiShenqingService.getInfo();
+    }
+    @PostMapping("/studentmanager/gangwei/updatestate/")
+    public Map<String, String> updateState(@RequestParam Map<String, String> data){
+        return gangweiShenqingService.updateState(data);
+    }
 }

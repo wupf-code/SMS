@@ -26,9 +26,9 @@ public class GangWeiImpl implements GangWeiService {
         return resp;
 
     }
-
     @Override
     public List<GangWei> getAll() {
         return gangWeiMapper.selectList(null);
     }
+
 }
